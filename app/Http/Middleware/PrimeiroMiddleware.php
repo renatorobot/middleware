@@ -18,7 +18,7 @@ class PrimeiroMiddleware
     {
         
         Log::debug('Passou pelo primeiro middleware');
-        //return $next($request);
-        return response('teste');
+        return $next($request);
+        //return response('teste');
     }
 }
