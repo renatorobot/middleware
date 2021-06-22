@@ -5,7 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Log;
 
-class PrimeiroMiddleware
+
+class TerceiroMiddleware
 {
     /**
      * Handle an incoming request.
@@ -14,12 +15,10 @@ class PrimeiroMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
-    {
+    public function handle($request, Closure $next, $nome, $idade)
+    {   
         
-        Log::debug('Passou pelo primeiro middleware');
-        return response('parando a cadeia de chamadas');
-        //return $next($request);
-    
+        Log::debug("Passou pelo terceiro middleware [ nome = $nome, $idade]");
+        return $next($request);
     }
 }
